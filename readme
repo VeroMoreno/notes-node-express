@@ -1,2 +1,21 @@
-// Iniciar un proyecto en node.
-npm init - y
+# 🚀 Basic Notes API BACKEND
+(![NodeJS](https://img.shields.io/badge/-NodeJS-%23f89d71?logo=javascript&logoColor=white) + Express)
+
+// Init a project with Node.js
+```shell
+ npm init - y
+```
+
+### Scripts
+```shell
+ npm run start
+```
+
+### Dev Dependencies
+* Nodemon
+* Standard
+
+### Dependencies
+* Cors
+* Express
+
