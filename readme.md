@@ -11,10 +11,11 @@
 ```
 
 ### Dev Dependencies
-* Nodemon
-* Standard
+* Nodemon (Automatic update)
+* Standard (Eslint)
 
 ### Dependencies
-* Cors
+* Cors (Any origin works in our API)
 * Express
+* Mongoose (schemas)
 

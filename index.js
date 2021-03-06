@@ -35,7 +35,7 @@ app.use(express.json())
 
 }) */
 
-const notes = [
+let notes = [
   {
     id: 1,
     content: "Veri is easy",
