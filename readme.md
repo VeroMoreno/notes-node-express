@@ -1,4 +1,4 @@
-# 🚀 Basic Notes API BACKEND (Node + Express)
+# 🚀 Basic Notes API BACKEND (Node + Express + MongoDB)
 
 // Init a project with Node.js
 ```shell
@@ -18,4 +18,7 @@
 * Cors (Any origin works in our API)
 * Express
 * Mongoose (schemas)
+* dotenv (get the .env file working with environment variables)
 
+### FYI secondary Info
+https://sentry.io/

@@ -1,0 +1,7 @@
+PUT http://localhost:3001/api/notes/6043fe96fcc9eb09cab6cbb0
+Content-Type: application/json
+
+{
+  "content": "Veritechie it´s amazing!",
+  "important": true
+}
