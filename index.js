@@ -55,10 +55,9 @@ app.get('/', (request, response) => {
   response.send('Hello Veritechie')
 })
 
-app.get('/api/notes', (request, response) => {
-  Note.find({}).then(notes => {
+app.get('/api/notes', async (request, response) => {
+  const notes = await Note.find({})
     response.json(notes)
-  })
 })
 
 app.get('/api/notes/:id', (request, response, next) => {
@@ -70,7 +69,6 @@ app.get('/api/notes/:id', (request, response, next) => {
         : response.status(404).end()
   })
   .catch(err => {
-    // que vaya al siguiente middleware
     next(err)
   })
 })
@@ -93,17 +91,16 @@ app.put('/api/notes/:id', (request, response, next) => {
   })
 })
 
-app.delete('/api/notes/:id', (request, response) => {
+app.delete('/api/notes/:id', async (request, response, next) => {
   const { id } = request.params
-  Note.findByIdAndDelete(id).then(() => {
-    response.status(204).end()
-  }).catch(err => {
-    next(err)
-  })
+  // const note = await Note.findById(id)
+  // if (!note) return response.sendStatus(404)
+  const res = await Note.findByIdAndDelete(id)
+  if (res === null) return response.sendStatus(404)
   response.status(204).end()
 })
 
-app.post('/api/notes', (request, response) => {
+app.post('/api/notes', async (request, response) => {
   const note = request.body
   if (!note.content) {
     return response.status(400).json({
@@ -116,9 +113,12 @@ app.post('/api/notes', (request, response) => {
     date: new Date(),
     important: note.important || false
   })
-  newNote.save().then(savedNote => {
+  try {
+    const savedNote = await newNote.save()
     response.json(savedNote)
-  })
+  } catch (error) {
+    next(error)
+  }
 })
 
 // El orden de los middleware y los path es importante.
@@ -128,6 +128,8 @@ app.use(notFound)
 
 // Este servidor tiene que escuchar de algún puerto:
 const PORT = process.env.PORT // || 3001
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Server running in port ${PORT}`)
 })
+
+module.exports = {app, server}
