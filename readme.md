@@ -25,6 +25,8 @@
 * Express
 * Mongoose (schemas)
 * dotenv (get the .env file working with environment variables)
+* bcrypt (Hash our password) node.bcrypt.js
+* mongoose-unique-validator (Validate unique values)
 
 ### FYI secondary Info
 https://sentry.io/ : Sentry's application monitoring platform helps every developer
@@ -32,3 +34,7 @@ diagnose, fix, and optimize the performance of their code.
 
 ### Backend Testing
 * Jest
+
+### How to
+create_user.rest - Create an user
+create_note.rest - Create a note and if you want to associate an user, use his userId

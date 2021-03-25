@@ -3,7 +3,13 @@ const { Schema, model } = require('mongoose')
 const noteSchema = new Schema({
   content: String,
   date: Date,
-  important: Boolean
+  important: Boolean,
+  // Las notas que hemos creado previamente no tienen usuario y no encajan con este esquema
+  // para resolverlo tienes una ejecucion que normalices los nuevos datos
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  }
 })
 
 // Transformamos el objeto que esperamos, podemos cambiar como funciona el toJSON que tiene el schema. Ahora el objeto tiene ese .id

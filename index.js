@@ -30,6 +30,8 @@ const app = express()
 // Importamos middleware
 const notFound = require('./middleware/notFound')
 const handleError = require('./middleware/handleError')
+const usersRouter = require('./controllers/users')
+
 
 // Con esto cualquier origen funciona en nuestra api
 app.use(cors())
@@ -123,6 +125,7 @@ app.post('/api/notes', async (request, response) => {
 
 // El orden de los middleware y los path es importante.
 // Middleware
+app.use('/api/users', usersRouter)
 app.use(handleError)
 app.use(notFound)
 

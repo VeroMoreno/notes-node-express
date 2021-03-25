@@ -1,0 +1,4 @@
+// Extension REST client (tipo postman e imsomnia)
+// podemos crear archivos de request en nuestro propio proyecto
+
+GET http://localhost:3001/api/users
