@@ -1,7 +1,7 @@
-// Encriptar nuestra super password
+ // Encriptar nuestra super password
 const bcrypt = require('bcrypt')
 const usersRouter = require('express').Router()
-const User = require('../models/user')
+const User = require('../models/User')
 
 /*
 Imaginate que quiero recuperar todas las notas

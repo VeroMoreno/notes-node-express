@@ -1,8 +1,8 @@
 POST http://localhost:3001/api/notes
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNWI2MmZhNGY1YzBkMGIwMTg2NmE3YiIsInVzZXJuYW1lIjoiVmVyb25pY2EiLCJpYXQiOjE2MTY4Mzk3NzIsImV4cCI6MTYxNzQ0NDU3Mn0.UzB4O74qqBD_F8Y9LAyvedupt0HhwRoOdGE2j8wYobQ
 
 {
-  "content": "Probando segunda nota con controller.notes!",
-  "important": true,
-  "userId": "605cc159d3a7c735e922b3f7"
+  "content": "userExtractor Middleware",
+  "important": true
 }

@@ -8,6 +8,7 @@
 ### Scripts
 ```shell
  npm run start
+ npm run dev
 ```
 
 ### Dev Dependencies
@@ -27,6 +28,7 @@
 * dotenv (get the .env file working with environment variables)
 * bcrypt (Hash our password) node.bcrypt.js
 * mongoose-unique-validator (Validate unique values)
+* JWT (Jason Web Tokens)
 
 ### FYI secondary Info
 https://sentry.io/ : Sentry's application monitoring platform helps every developer
@@ -35,6 +37,7 @@ diagnose, fix, and optimize the performance of their code.
 ### Backend Testing
 * Jest
 
-### How to
+### How to (remember that!)
 create_user.rest - Create an user
-create_note.rest - Create a note and if you want to associate an user, use his userId
+login_user.rest  - Get JWT
+create_note.rest - Create a note with Authorization: Bearer
