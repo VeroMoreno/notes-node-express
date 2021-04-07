@@ -1,5 +1,6 @@
 const notesRouter = require('express').Router()
 const Note = require('../models/Note')
+const User = require('../models/User')
 const userExtractor = require('../middleware/userExtractor')
 
 
@@ -66,7 +67,7 @@ notesRouter.post('/', userExtractor, async (request, response, next) => {
   // AQUI ESTABA LO DEL DECODED TOKEN, AHORA EN MIDDLEWARE userExtractor.
   // recuperamos el userId
   const { userId } = request
-
+  console.log(request)
   const user = await User.findById(userId)
   if (!content) {
     return response.status(400).json({
